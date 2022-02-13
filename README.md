@@ -1,9 +1,3 @@
-# Fabric Example Mod
+# Hanging Spiders
 
-## Setup
-
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+Fabric 1.18.1+ mod that changes the behaviour and model of Minecraft Spiders to take advantage of the new cave terrain.
