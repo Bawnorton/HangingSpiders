@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "hangingspiders",
+  "version": "${version}",
+
+  "name": "Hanging Spiders",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Curmor"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/hangingspiders/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.bawnorton.hangingspiders.HangingSpiders"
+    ],
+    "client": [
+      "com.bawnorton.hangingspiders.client.HangingSpidersClient"
+    ]
+  },
+  "mixins": [
+    "hangingspiders.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
