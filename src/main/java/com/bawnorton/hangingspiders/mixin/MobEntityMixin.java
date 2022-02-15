@@ -14,17 +14,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Random;
 
 @Mixin(MobEntity.class)
-public class MobEntityMixin {
+public abstract class MobEntityMixin {
+    /**
+     * Allow spawning on the roof
+     */
     @Inject(method = "canMobSpawn", at = @At("RETURN"), cancellable = true)
-    private static void allowBlockContactSpawning(EntityType<? extends MobEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random, CallbackInfoReturnable<Boolean> cir) {
-        if (!cir.getReturnValueZ() && TypeChecker.isSpider(type)) {
-            BlockPos[] offsetPostions = new BlockPos[]{pos.up(), pos.north(), pos.east(), pos.south(), pos.west()};
-            for(BlockPos offsetPostion: offsetPostions) {
-                if (world.getBlockState(offsetPostion).allowsSpawning(world, offsetPostion, type)) {
-                    cir.setReturnValue(true);
-                    return;
-                }
-            }
+    private static void allowSpawningUnderBlock(EntityType<? extends MobEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random, CallbackInfoReturnable<Boolean> cir) {
+        if (!cir.getReturnValueZ() && TypeChecker.isSpider(type) && world.getBlockState(pos.up()).allowsSpawning(world, pos.up(), type)) {
+            cir.setReturnValue(true);
         }
     }
 }

@@ -4,6 +4,7 @@
   "package": "com.bawnorton.hangingspiders.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "LivingEntityMixin",
     "MobEntityMixin",
     "SpawnHelperMixin",
     "SpawnRestrictionMixin"

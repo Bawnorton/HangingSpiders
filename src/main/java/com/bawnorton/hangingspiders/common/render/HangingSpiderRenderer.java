@@ -21,7 +21,10 @@ public class HangingSpiderRenderer extends GeoEntityRenderer<HangingSpider> {
 
     @Override
     public void render(HangingSpider entity, float entityYaw, float partialTicks, MatrixStack stack, VertexConsumerProvider bufferIn, int packedLightIn) {
-        stack.multiply(entity.getRotation());
+        if(entity.isUpsideDown()) {
+            stack.multiply(new Quaternion(Vec3f.POSITIVE_X, 180,true));
+            stack.translate(0, -0.9F, 0);
+        }
         super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
     }
 }
