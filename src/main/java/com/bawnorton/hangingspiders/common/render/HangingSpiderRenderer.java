@@ -6,11 +6,9 @@ import com.bawnorton.hangingspiders.common.model.SpiderEyesLayer;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.util.BlockRotation;
-import net.minecraft.util.math.*;
+import net.minecraft.entity.ai.pathing.Path;
+import net.minecraft.util.math.BlockPos;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
-
-import java.util.HashMap;
 
 public class HangingSpiderRenderer extends GeoEntityRenderer<HangingSpider> {
 
@@ -21,10 +19,6 @@ public class HangingSpiderRenderer extends GeoEntityRenderer<HangingSpider> {
 
     @Override
     public void render(HangingSpider entity, float entityYaw, float partialTicks, MatrixStack stack, VertexConsumerProvider bufferIn, int packedLightIn) {
-        if(entity.isUpsideDown()) {
-            stack.multiply(new Quaternion(Vec3f.POSITIVE_X, 180,true));
-            stack.translate(0, -0.9F, 0);
-        }
         super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
     }
 }

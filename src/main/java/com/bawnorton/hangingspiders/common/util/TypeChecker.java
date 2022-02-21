@@ -1,4 +1,4 @@
-package com.bawnorton.hangingspiders.util;
+package com.bawnorton.hangingspiders.common.util;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

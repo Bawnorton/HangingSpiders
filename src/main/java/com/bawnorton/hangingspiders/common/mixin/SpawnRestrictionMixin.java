@@ -1,6 +1,6 @@
-package com.bawnorton.hangingspiders.mixin;
+package com.bawnorton.hangingspiders.common.mixin;
 
-import com.bawnorton.hangingspiders.util.TypeChecker;
+import com.bawnorton.hangingspiders.common.util.TypeChecker;
 import net.minecraft.entity.SpawnRestriction;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

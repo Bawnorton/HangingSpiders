@@ -1,4 +1,4 @@
-package com.bawnorton.hangingspiders.mixin;
+package com.bawnorton.hangingspiders.common.mixin;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.MobEntity;
@@ -21,5 +21,4 @@ public class SpawnHelperMixin {
 			cir.setReturnValue(HANGING_SPIDER.create(world));
 		}
 	}
-
 }

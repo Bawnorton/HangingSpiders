@@ -1,4 +1,4 @@
-package com.bawnorton.hangingspiders.mixin;
+package com.bawnorton.hangingspiders.common.mixin;
 
 import com.bawnorton.hangingspiders.common.entity.HangingSpider;
 import net.minecraft.entity.Entity;
@@ -15,6 +15,7 @@ public abstract class LivingEntityMixin {
         Entity entity = ((Entity) (Object) this);
         if (entity instanceof HangingSpider) {
             if(((HangingSpider) entity).isUpsideDown()) {
+                entity.setOnGround(true);
                 double y = args.get(1);
                 if (y < 0) {
                     args.set(1, y * -1);

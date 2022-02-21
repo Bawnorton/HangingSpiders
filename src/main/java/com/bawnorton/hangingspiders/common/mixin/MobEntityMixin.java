@@ -1,6 +1,6 @@
-package com.bawnorton.hangingspiders.mixin;
+package com.bawnorton.hangingspiders.common.mixin;
 
-import com.bawnorton.hangingspiders.util.TypeChecker;
+import com.bawnorton.hangingspiders.common.util.TypeChecker;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.MobEntity;
@@ -16,7 +16,7 @@ import java.util.Random;
 @Mixin(MobEntity.class)
 public abstract class MobEntityMixin {
     /**
-     * Allow spawning on the roof
+     * Allow spawning on the underside of blocks
      */
     @Inject(method = "canMobSpawn", at = @At("RETURN"), cancellable = true)
     private static void allowSpawningUnderBlock(EntityType<? extends MobEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random, CallbackInfoReturnable<Boolean> cir) {
